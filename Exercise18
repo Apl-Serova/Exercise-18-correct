@@ -1,26 +1,29 @@
 import java.util.Scanner;
+import java.io.*;
 
-public class Task_14 {
-    static Scanner scanner = new Scanner ( System.in );
+public class Exercise18 {
+
     public static void main(String[] args) {
-        File file = new File ( "C:/Users/user", "First.txt" );
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Введите адрес файла: ");
+        String ad = sc.nextLine();
+        File file = new File (ad);
         try {
             FileReader fileReader = new FileReader ( file );
             BufferedReader reader = new BufferedReader ( fileReader );
             String S = null;
+            int l = 0;
             while ((S = reader.readLine ()) != null) {
                 System.out.println ( S );
+                l++;
             }
             reader.close ();
-        }
-        catch (IOException exc){
-            System.out.println ( "Ошибка ввода-вывода" + exc );
-        }
-        try {
             FileWriter writer = new FileWriter (file);
             System.out.println ( "Введите текст: " );
-            String S = scanner.nextLine ();
-            writer.write(S);
+            for (int i = 1; i<=(l); i++){
+                String S1 = sc.nextLine();
+                writer.write(S1 +"\n");
+            }
             writer.close ();
         }
         catch (IOException exc){
