@@ -11,18 +11,18 @@ public class Exercise18 {
         try {
             FileReader fileReader = new FileReader ( file );
             BufferedReader reader = new BufferedReader ( fileReader );
-            String S = null;
+            String s = null;
             int l = 0;
-            while ((S = reader.readLine ()) != null) {
-                System.out.println ( S );
+            while ((s = reader.readLine ()) != null) {
+                System.out.println ( s );
                 l++;
             }
             reader.close ();
             FileWriter writer = new FileWriter (file);
             System.out.println ( "Введите текст: " );
-            for (int i = 1; i<=(l); i++){
-                String S1 = sc.nextLine();
-                writer.write(S1 +"\n");
+            for (int i = 1; i<=l; i++){
+                String s1 = sc.nextLine();
+                writer.write(s1 +" \n");
             }
             writer.close ();
         }
@@ -31,3 +31,4 @@ public class Exercise18 {
         }
     }
 }
+
